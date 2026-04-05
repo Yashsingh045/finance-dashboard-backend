@@ -9,9 +9,4 @@ module.exports = {
     '!src/utils/swagger.ts',
   ],
   coverageThreshold: { global: { lines: 70 } },
-  // Note: 'setupFilesAfterFramework' is not a valid Jest key; using
-  // 'setupFilesAfterFramework' was in the spec but Jest uses
-  // 'setupFilesAfterFramework'. Using globalSetup instead to bootstrap
-  // the test Prisma client singleton before tests run.
-  setupFilesAfterFramework: ['<rootDir>/tests/helpers/testClient.ts'],
 };
