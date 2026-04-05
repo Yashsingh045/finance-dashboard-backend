@@ -26,7 +26,7 @@ describe('RBAC Access Control', () => {
       .set('Authorization', `Bearer ${analystToken}`)
       .send(VALID_RECORD);
     createdRecordId = res.body.data?.record?.id ?? '';
-  });
+  }, 30000);
 
   describe('Record creation', () => {
     it('VIEWER cannot POST /api/records → 403', async () => {

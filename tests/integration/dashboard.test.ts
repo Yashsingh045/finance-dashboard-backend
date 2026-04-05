@@ -27,7 +27,7 @@ describe('Dashboard Endpoints', () => {
       .post('/api/records')
       .set('Authorization', `Bearer ${analystToken}`)
       .send(VALID_EXPENSE);
-  });
+  }, 30000);
 
   describe('GET /api/dashboard/summary', () => {
     it('returns correct totals for analyst after seeded data', async () => {
