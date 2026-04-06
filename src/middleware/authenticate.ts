@@ -42,7 +42,7 @@ export const authenticate = async (
       throw new AuthenticationException('Authorization header missing or malformed');
     }
 
-    const token = authHeader.slice(7); // Strip "Bearer "
+    const token = authHeader.slice(7).trim(); // Strip "Bearer " and any extra spaces
     const authService = getAuthService();
     const payload = authService.verifyToken(token);
 

@@ -12,8 +12,20 @@ import { logger } from './utils/logger';
 export function createApp() {
   const app = express();
 
-  // Basic security headers
-  app.use(helmet());
+  // Basic security headers with Swagger UI exception for CSP
+  app.use(
+    helmet({
+      contentSecurityPolicy: {
+        directives: {
+          ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+          'script-src': ["'self'", "'unsafe-inline'", 'cdn.jsdelivr.net'],
+          'style-src': ["'self'", "'unsafe-inline'", 'cdn.jsdelivr.net', 'fonts.googleapis.com'],
+          'font-src': ["'self'", 'fonts.gstatic.com'],
+          'img-src': ["'self'", 'data:', 'res.cloudinary.com'],
+        },
+      },
+    }),
+  );
 
   // Enable CORS — in production, configure this with a whitelist of origins
   app.use(cors());
@@ -25,8 +37,15 @@ export function createApp() {
   // Swagger UI at /api-docs (public, no auth)
   setupSwagger(app);
 
-  // Health check — public, no auth required
-  // Returns "database": "error" (still 200) if DB is unreachable
+  /**
+   * @swagger
+   * /health:
+   *   get:
+   *     tags: [Utility]
+   *     summary: Check system health
+   *     responses:
+   *       200: { description: System is healthy }
+   */
   app.get('/health', async (_req: Request, res: Response) => {
     let dbStatus = 'connected';
     try {

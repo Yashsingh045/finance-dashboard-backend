@@ -44,6 +44,26 @@ router.use('/records', recordRoutes);
 router.use('/dashboard', dashboardRoutes);
 
 // Audit logs: admin only
+/**
+ * @swagger
+ * /api/audit-logs:
+ *   get:
+ *     tags: [Audit]
+ *     summary: List system audit logs (Admin only)
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: query
+ *         name: page
+ *         schema: { type: integer, default: 1 }
+ *       - in: query
+ *         name: limit
+ *         schema: { type: integer, default: 20 }
+ *     responses:
+ *       200: { description: List of audit events }
+ *       401: { description: Not authenticated }
+ *       403: { description: Insufficient permissions }
+ */
 router.get(
   '/audit-logs',
   authenticate,

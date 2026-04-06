@@ -97,6 +97,24 @@ export class RecordController extends BaseController {
     }
   };
 
+  /**
+   * @swagger
+   * /api/records/{id}:
+   *   get:
+   *     tags: [Records]
+   *     summary: Get a financial record by ID
+   *     security:
+   *       - bearerAuth: []
+   *     parameters:
+   *       - in: path
+   *         name: id
+   *         required: true
+   *         schema: { type: string, format: uuid }
+   *     responses:
+   *       200: { description: Record details }
+   *       401: { description: Not authenticated }
+   *       404: { description: Record not found }
+   */
   getOne = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const user = req.user!;
@@ -107,6 +125,37 @@ export class RecordController extends BaseController {
     }
   };
 
+  /**
+   * @swagger
+   * /api/records/{id}:
+   *   patch:
+   *     tags: [Records]
+   *     summary: Update a financial record
+   *     security:
+   *       - bearerAuth: []
+   *     parameters:
+   *       - in: path
+   *         name: id
+   *         required: true
+   *         schema: { type: string, format: uuid }
+   *     requestBody:
+   *       required: true
+   *       content:
+   *         application/json:
+   *           schema:
+   *             type: object
+   *             properties:
+   *               type: { type: string, enum: [INCOME, EXPENSE] }
+   *               amount: { type: number, minimum: 0.01 }
+   *               category: { type: string }
+   *               description: { type: string }
+   *     responses:
+   *       200: { description: Record updated }
+   *       400: { description: Validation error }
+   *       401: { description: Not authenticated }
+   *       403: { description: Insufficient permissions }
+   *       404: { description: Record not found }
+   */
   update = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const user = req.user!;
@@ -122,6 +171,25 @@ export class RecordController extends BaseController {
     }
   };
 
+  /**
+   * @swagger
+   * /api/records/{id}:
+   *   delete:
+   *     tags: [Records]
+   *     summary: Soft-delete a financial record
+   *     security:
+   *       - bearerAuth: []
+   *     parameters:
+   *       - in: path
+   *         name: id
+   *         required: true
+   *         schema: { type: string, format: uuid }
+   *     responses:
+   *       200: { description: Record deleted }
+   *       401: { description: Not authenticated }
+   *       403: { description: Insufficient permissions }
+   *       404: { description: Record not found }
+   */
   remove = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const user = req.user!;

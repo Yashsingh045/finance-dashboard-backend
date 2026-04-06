@@ -7,6 +7,26 @@ export class UserController extends BaseController {
     super();
   }
 
+  /**
+   * @swagger
+   * /api/users:
+   *   get:
+   *     tags: [Users]
+   *     summary: List all users (Admin only)
+   *     security:
+   *       - bearerAuth: []
+   *     parameters:
+   *       - in: query
+   *         name: page
+   *         schema: { type: integer, default: 1 }
+   *       - in: query
+   *         name: limit
+   *         schema: { type: integer, default: 20 }
+   *     responses:
+   *       200: { description: List of users }
+   *       401: { description: Not authenticated }
+   *       403: { description: Insufficient permissions }
+   */
   list = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const { page, limit } = this.getPagination(req.query as Record<string, string>);
@@ -17,6 +37,25 @@ export class UserController extends BaseController {
     }
   };
 
+  /**
+   * @swagger
+   * /api/users/{id}:
+   *   get:
+   *     tags: [Users]
+   *     summary: Get a user by ID (Admin only)
+   *     security:
+   *       - bearerAuth: []
+   *     parameters:
+   *       - in: path
+   *         name: id
+   *         required: true
+   *         schema: { type: string, format: uuid }
+   *     responses:
+   *       200: { description: User details }
+   *       401: { description: Not authenticated }
+   *       403: { description: Insufficient permissions }
+   *       404: { description: User not found }
+   */
   getOne = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const user = await this.userService.getUserById(req.params['id']!);
@@ -26,6 +65,35 @@ export class UserController extends BaseController {
     }
   };
 
+  /**
+   * @swagger
+   * /api/users/{id}:
+   *   patch:
+   *     tags: [Users]
+   *     summary: Update a user (Admin only)
+   *     security:
+   *       - bearerAuth: []
+   *     parameters:
+   *       - in: path
+   *         name: id
+   *         required: true
+   *         schema: { type: string, format: uuid }
+   *     requestBody:
+   *       required: true
+   *       content:
+   *         application/json:
+   *           schema:
+   *             type: object
+   *             properties:
+   *               name: { type: string }
+   *               role: { type: string, enum: [VIEWER, ANALYST, ADMIN] }
+   *               status: { type: string, enum: [ACTIVE, INACTIVE, SUSPENDED] }
+   *     responses:
+   *       200: { description: User updated }
+   *       401: { description: Not authenticated }
+   *       403: { description: Insufficient permissions }
+   *       404: { description: User not found }
+   */
   update = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const actorUser = req.user!;
@@ -36,6 +104,25 @@ export class UserController extends BaseController {
     }
   };
 
+  /**
+   * @swagger
+   * /api/users/{id}:
+   *   delete:
+   *     tags: [Users]
+   *     summary: Deactivate a user (Admin only)
+   *     security:
+   *       - bearerAuth: []
+   *     parameters:
+   *       - in: path
+   *         name: id
+   *         required: true
+   *         schema: { type: string, format: uuid }
+   *     responses:
+   *       200: { description: User deactivated }
+   *       401: { description: Not authenticated }
+   *       403: { description: Insufficient permissions }
+   *       404: { description: User not found }
+   */
   deactivate = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const actorUser = req.user!;

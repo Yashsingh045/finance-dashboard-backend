@@ -12,7 +12,7 @@ const options: swaggerJsdoc.Options = {
       description:
         'Production-quality finance dashboard backend with RBAC, financial records management, and dashboard analytics.',
     },
-    servers: [{ url: '/api', description: 'API base path' }],
+    servers: [{ url: '/', description: 'Root path' }],
     components: {
       securitySchemes: {
         bearerAuth: {
@@ -24,8 +24,8 @@ const options: swaggerJsdoc.Options = {
     },
     security: [{ bearerAuth: [] }],
   },
-  // Scan all route and controller files for @swagger JSDoc comments
-  apis: ['./src/routes/*.ts', './src/controllers/*.ts'],
+  // Scan both source and compiled files to support both dev and prod environments
+  apis: ['./src/routes/*.ts', './src/controllers/*.ts', './dist/routes/*.js', './dist/controllers/*.js'],
 };
 
 const swaggerSpec = swaggerJsdoc(options);

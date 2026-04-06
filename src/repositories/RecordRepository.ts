@@ -121,6 +121,12 @@ export class RecordRepository extends BaseRepository<FinancialRecord> {
 
   protected mapToEntity(raw: unknown): FinancialRecord {
     const r = raw as PrismaFinancialRecord;
+    
+    // Defensive check: ensure critical fields exist before calling constructor
+    if (!r || !r.id || !r.userId || !r.amount || !r.type) {
+      throw new Error(`Mapping error: Malformed record data from database for ID: ${r?.id ?? 'unknown'}`);
+    }
+
     return new FinancialRecord(
       r.id,
       r.userId,

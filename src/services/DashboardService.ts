@@ -142,13 +142,20 @@ export class DashboardService extends BaseService {
 
   private getPeriodKey(isoDate: string, period: TrendPeriod): string {
     const d = new Date(isoDate);
+
+    // Guard: invalid dates in input data shouldn't crash the metrics logic
+    if (isNaN(d.getTime())) {
+      return 'unknown';
+    }
+
     if (period === TrendPeriod.YEARLY) {
       return `${d.getFullYear()}`;
     }
     if (period === TrendPeriod.WEEKLY) {
       // ISO week: YYYY-Www
       const startOfYear = new Date(d.getFullYear(), 0, 1);
-      const week = Math.ceil(((d.getTime() - startOfYear.getTime()) / 86400000 + startOfYear.getDay() + 1) / 7);
+      const diff = d.getTime() - startOfYear.getTime();
+      const week = Math.ceil(((diff / 86400000) + startOfYear.getDay() + 1) / 7);
       return `${d.getFullYear()}-W${String(week).padStart(2, '0')}`;
     }
     // Default: MONTHLY — YYYY-MM
