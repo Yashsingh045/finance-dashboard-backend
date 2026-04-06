@@ -16,7 +16,6 @@ interface PrismaUser {
   updatedAt: Date;
 }
 
-// src/repositories/UserRepository.ts
 export class UserRepository extends BaseRepository<User> {
   constructor(prismaClient: PrismaClient = prisma) {
     super(prismaClient);

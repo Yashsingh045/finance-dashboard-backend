@@ -2,7 +2,6 @@ import { z } from 'zod';
 import { UserRole, UserStatus } from '../entities/enums';
 import { BaseValidator } from './BaseValidator';
 
-// src/validators/UserValidator.ts
 const updateUserSchema = z.object({
   name: z.string().min(2).max(100).trim().optional(),
   role: z.nativeEnum(UserRole).optional(),

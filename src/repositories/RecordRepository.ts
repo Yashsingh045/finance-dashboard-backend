@@ -19,7 +19,6 @@ interface PrismaFinancialRecord {
   updatedAt: Date;
 }
 
-// src/repositories/RecordRepository.ts
 // All queries include { isDeleted: false } by default — soft-deleted records
 // are never returned unless explicitly requested.
 export class RecordRepository extends BaseRepository<FinancialRecord> {

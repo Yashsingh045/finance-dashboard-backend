@@ -3,7 +3,6 @@ import { DashboardService } from '../services/DashboardService';
 import { TrendPeriod } from '../entities/enums';
 import { BaseController } from './BaseController';
 
-// src/controllers/DashboardController.ts
 export class DashboardController extends BaseController {
   constructor(private readonly dashboardService: DashboardService) {
     super();

@@ -1,7 +1,6 @@
 import supertest from 'supertest';
 import app from '../../src/app';
 
-// tests/helpers/testClient.ts
 // Exports a pre-configured supertest agent bound to the Express app.
 // Import this in integration tests instead of raw supertest(app) for consistency.
 export const testClient = supertest(app);

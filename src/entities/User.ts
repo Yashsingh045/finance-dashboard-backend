@@ -2,7 +2,6 @@ import bcrypt from 'bcryptjs';
 import { BaseEntity } from './BaseEntity';
 import { UserRole, UserStatus } from './enums';
 
-// src/entities/User.ts
 // Domain entity for a user. hashedPassword is intentionally excluded from toJSON()
 // so it can never leak into API responses.
 export class User extends BaseEntity {

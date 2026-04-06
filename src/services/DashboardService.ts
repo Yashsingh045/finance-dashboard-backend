@@ -5,7 +5,6 @@ import { RoleStrategyFactory } from '../strategies/RoleStrategyFactory';
 import { BaseService } from './BaseService';
 import { JwtPayload } from './AuthService';
 
-// src/services/DashboardService.ts
 // Read-only analytics service — no create/update/delete methods.
 // ADMIN sees aggregated data across all users; others see only their own records.
 export class DashboardService extends BaseService {

@@ -1,7 +1,6 @@
 import { ZodSchema } from 'zod';
 import { ValidationException } from '../exceptions/ValidationException';
 
-// src/validators/BaseValidator.ts
 // Provides the shared validate() helper used by all concrete validator classes.
 // All schemas live in the same class for easy reference by services/middleware.
 export abstract class BaseValidator {

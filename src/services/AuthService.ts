@@ -23,7 +23,6 @@ export interface UserWithToken {
   token: string;
 }
 
-// src/services/AuthService.ts
 export class AuthService extends BaseService {
   constructor(
     private readonly userRepository: UserRepository,

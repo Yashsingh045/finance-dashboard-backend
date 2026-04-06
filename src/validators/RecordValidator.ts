@@ -2,7 +2,6 @@ import { z } from 'zod';
 import { Category, RecordType } from '../entities/enums';
 import { BaseValidator } from './BaseValidator';
 
-// src/validators/RecordValidator.ts
 const createRecordSchema = z.object({
   type: z.nativeEnum(RecordType),
   amount: z.number().positive().multipleOf(0.01),

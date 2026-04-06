@@ -2,7 +2,6 @@ import { Request, Response, NextFunction } from 'express';
 import { BaseException } from '../exceptions/BaseException';
 import { logger } from '../utils/logger';
 
-// src/middleware/errorHandler.ts
 // Global 4-argument Express error handler. All errors thrown in controllers,
 // services, and middleware are caught here and formatted into a consistent envelope.
 // Stack traces are never exposed to the client.

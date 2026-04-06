@@ -7,7 +7,6 @@ import {
   VALID_EXPENSE,
 } from '../helpers/fixtures';
 
-// tests/integration/dashboard.test.ts
 describe('Dashboard Endpoints', () => {
   let analystToken: string;
   let adminToken: string;

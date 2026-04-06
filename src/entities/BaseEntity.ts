@@ -1,4 +1,3 @@
-// src/entities/BaseEntity.ts
 // Abstract base for all domain entities — provides id and timestamp fields
 // plus the two abstract contracts every entity must implement.
 export abstract class BaseEntity {

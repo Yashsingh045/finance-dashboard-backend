@@ -1,6 +1,5 @@
 import { RoleStrategy } from './RoleStrategy';
 
-// src/strategies/AnalystStrategy.ts
 // ANALYST: can create and update their own records but cannot delete or manage users.
 export class AnalystStrategy implements RoleStrategy {
   canCreateRecord(): boolean { return true; }

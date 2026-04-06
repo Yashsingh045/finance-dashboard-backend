@@ -7,7 +7,6 @@ import { AuditService } from './AuditService';
 import { BaseService } from './BaseService';
 import { JwtPayload } from './AuthService';
 
-// src/services/UserService.ts
 export class UserService extends BaseService {
   constructor(
     private readonly userRepository: UserRepository,

@@ -4,7 +4,6 @@ import { AnalystStrategy } from './AnalystStrategy';
 import { RoleStrategy } from './RoleStrategy';
 import { ViewerStrategy } from './ViewerStrategy';
 
-// src/strategies/RoleStrategyFactory.ts
 // Static factory: maps a UserRole enum value to its concrete strategy instance.
 // Adding a new role = add a new strategy class + one case here. No if/else chains.
 export class RoleStrategyFactory {

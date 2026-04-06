@@ -13,7 +13,6 @@ import userRoutes from './user.routes';
 import recordRoutes from './record.routes';
 import dashboardRoutes from './dashboard.routes';
 
-// src/routes/index.ts
 // Mounts all sub-routers under /api and adds the audit-logs endpoint here
 // since it doesn't warrant its own controller (simple paginated list).
 

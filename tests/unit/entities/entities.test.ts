@@ -4,7 +4,6 @@ import { FinancialRecord } from '../../../src/entities/FinancialRecord';
 import { AuditLog } from '../../../src/entities/AuditLog';
 import { UserRole, UserStatus, RecordType, Category, AuditAction } from '../../../src/entities/enums';
 
-// tests/unit/entities/entities.test.ts
 describe('User entity', () => {
   const makeUser = () =>
     new User(

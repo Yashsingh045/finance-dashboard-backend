@@ -3,7 +3,6 @@ import { RecordService, RecordFilters } from '../services/RecordService';
 import { Category, RecordType } from '../entities/enums';
 import { BaseController } from './BaseController';
 
-// src/controllers/RecordController.ts
 export class RecordController extends BaseController {
   constructor(private readonly recordService: RecordService) {
     super();

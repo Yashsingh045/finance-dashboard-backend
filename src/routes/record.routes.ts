@@ -10,7 +10,6 @@ import { authorize } from '../middleware/authorize';
 import { validate } from '../middleware/validate';
 import { UserRole } from '../entities/enums';
 
-// src/routes/record.routes.ts
 const router = Router();
 
 const recordRepository = new RecordRepository();

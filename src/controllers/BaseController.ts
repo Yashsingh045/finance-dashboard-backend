@@ -1,7 +1,6 @@
 import { Response } from 'express';
 import { BaseException } from '../exceptions/BaseException';
 
-// src/controllers/BaseController.ts
 // Shared response helpers used by all concrete controllers.
 // Controllers call sendCreated/sendSuccess — never write to res directly on success.
 // On error they simply throw — errorHandler middleware catches and formats.

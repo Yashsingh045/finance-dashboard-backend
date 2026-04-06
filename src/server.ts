@@ -2,7 +2,6 @@ import app from './app';
 import { prisma } from './utils/prisma';
 import { logger } from './utils/logger';
 
-// src/server.ts
 // Entry point — calls app.listen() and wires SIGTERM/SIGINT handlers
 // to gracefully shut down Prisma connections before exit.
 

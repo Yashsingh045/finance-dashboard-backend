@@ -4,7 +4,6 @@ import { DashboardService } from '../services/DashboardService';
 import { RecordRepository } from '../repositories/RecordRepository';
 import { authenticate } from '../middleware/authenticate';
 
-// src/routes/dashboard.routes.ts
 const router = Router();
 
 const recordRepository = new RecordRepository();

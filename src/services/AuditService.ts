@@ -2,7 +2,6 @@ import { AuditLogRepository } from '../repositories/AuditLogRepository';
 import { AuditAction } from '../entities/enums';
 import { BaseService } from './BaseService';
 
-// src/services/AuditService.ts
 // Injected into RecordService and AuthService so they can log changes automatically.
 // AuditService.log() never throws — a logging failure must not break the main operation.
 export class AuditService extends BaseService {

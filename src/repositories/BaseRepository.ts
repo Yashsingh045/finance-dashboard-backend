@@ -1,7 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { BaseEntity } from '../entities/BaseEntity';
 
-// src/repositories/BaseRepository.ts
 // Generic repository contract. Concrete repositories extend this with a specific
 // entity type T. Swapping the DB engine only requires new concrete implementations.
 export abstract class BaseRepository<T extends BaseEntity> {

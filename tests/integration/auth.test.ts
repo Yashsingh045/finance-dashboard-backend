@@ -1,7 +1,6 @@
 import { testClient, loginAs, registerAndLogin } from '../helpers/testClient';
 import { randomEmail } from '../helpers/fixtures';
 
-// tests/integration/auth.test.ts
 describe('Auth Endpoints', () => {
   describe('POST /api/auth/register', () => {
     it('should register with valid data and return 201 with token', async () => {

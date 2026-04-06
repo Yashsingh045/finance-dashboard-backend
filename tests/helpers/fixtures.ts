@@ -1,4 +1,3 @@
-// tests/helpers/fixtures.ts
 // Shared test data fixtures used across integration tests.
 
 export const ADMIN_CREDENTIALS = {

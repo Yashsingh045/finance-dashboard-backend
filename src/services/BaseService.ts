@@ -1,7 +1,6 @@
 import { Logger } from 'winston';
 import { logger } from '../utils/logger';
 
-// src/services/BaseService.ts
 // All services extend this class. The logger is injected via constructor for easy
 // mocking in tests. validate() must be implemented by each concrete service.
 export abstract class BaseService {

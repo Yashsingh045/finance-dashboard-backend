@@ -29,7 +29,6 @@ function getAuthService(): AuthService {
   return _authService;
 }
 
-// src/middleware/authenticate.ts
 // Verifies the JWT and attaches req.user. Throws AuthenticationException on failure.
 // Downstream middleware and controllers always read req.user — they never re-parse tokens.
 export const authenticate = async (

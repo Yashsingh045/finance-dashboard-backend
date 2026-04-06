@@ -7,7 +7,6 @@ import {
   randomEmail,
 } from '../helpers/fixtures';
 
-// tests/integration/records.test.ts
 describe('Financial Records Endpoints', () => {
   let analystToken: string;
   let adminToken: string;

@@ -14,7 +14,6 @@ interface PrismaAuditLog {
   createdAt: Date;
 }
 
-// src/repositories/AuditLogRepository.ts
 export class AuditLogRepository extends BaseRepository<AuditLog> {
   constructor(prismaClient: PrismaClient = prisma) {
     super(prismaClient);

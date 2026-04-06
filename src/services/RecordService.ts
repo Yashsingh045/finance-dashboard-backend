@@ -19,7 +19,6 @@ export interface RecordFilters {
   limit?: number;
 }
 
-// src/services/RecordService.ts
 export class RecordService extends BaseService {
   constructor(
     private readonly recordRepository: RecordRepository,

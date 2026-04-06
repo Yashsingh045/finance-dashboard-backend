@@ -8,7 +8,6 @@ import { AuditService } from '../services/AuditService';
 import { authenticate } from '../middleware/authenticate';
 import { validate } from '../middleware/validate';
 
-// src/routes/auth.routes.ts
 const router = Router();
 
 // Wire up dependencies

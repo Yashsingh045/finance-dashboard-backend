@@ -1,7 +1,6 @@
 import { BaseEntity } from './BaseEntity';
 import { AuditAction } from './enums';
 
-// src/entities/AuditLog.ts
 // Immutable audit trail entry. Changes are stored as JSON for full flexibility.
 export class AuditLog extends BaseEntity {
   private userId: string;

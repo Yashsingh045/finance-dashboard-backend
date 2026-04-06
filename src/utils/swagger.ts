@@ -2,7 +2,6 @@ import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import { Express } from 'express';
 
-// src/utils/swagger.ts
 // Auto-generates OpenAPI spec from JSDoc @swagger annotations in route/controller files.
 const options: swaggerJsdoc.Options = {
   definition: {

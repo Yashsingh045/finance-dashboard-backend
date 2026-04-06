@@ -1,7 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 
-// prisma/seed.ts
 // Seeds the database with the exact test users and 10 sample financial records.
 // Passwords, emails, and roles are defined in the spec and must not be changed.
 

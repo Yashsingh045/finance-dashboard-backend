@@ -3,7 +3,6 @@ import { UserRole } from '../entities/enums';
 import { AuthorizationException } from '../exceptions/AuthorizationException';
 import { AuthenticationException } from '../exceptions/AuthenticationException';
 
-// src/middleware/authorize.ts
 // Factory middleware: authorize(ANALYST, ADMIN) returns a middleware that
 // checks req.user.role is in the provided list.
 // Must run AFTER authenticate — req.user is expected to already be populated.

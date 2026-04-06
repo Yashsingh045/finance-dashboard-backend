@@ -1,4 +1,3 @@
-// src/exceptions/BaseException.ts
 // All custom exceptions extend this class so the global error handler can
 // identify them (instanceof BaseException) and format a consistent JSON envelope.
 export class BaseException extends Error {

@@ -3,7 +3,6 @@ import { AuthService } from '../services/AuthService';
 import { AuditAction } from '../entities/enums';
 import { BaseController } from './BaseController';
 
-// src/controllers/AuthController.ts
 export class AuthController extends BaseController {
   constructor(private readonly authService: AuthService) {
     super();

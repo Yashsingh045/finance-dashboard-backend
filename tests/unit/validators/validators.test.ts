@@ -4,7 +4,6 @@ import { UserValidator } from '../../../src/validators/UserValidator';
 import { ValidationException } from '../../../src/exceptions/ValidationException';
 import { UserRole, UserStatus } from '../../../src/entities/enums';
 
-// tests/unit/validators/validators.test.ts
 describe('AuthValidator', () => {
   const validator = new AuthValidator();
 

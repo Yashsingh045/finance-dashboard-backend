@@ -1,15 +1,22 @@
 import express, { Request, Response } from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
 import { prisma } from './utils/prisma';
 import { setupSwagger } from './utils/swagger';
 import { errorHandler } from './middleware/errorHandler';
 import apiRouter from './routes/index';
 import { logger } from './utils/logger';
 
-// src/app.ts
 // Express app factory — exported without calling listen() so tests can import it
 // without starting a live server. server.ts calls app.listen().
 export function createApp() {
   const app = express();
+
+  // Basic security headers
+  app.use(helmet());
+
+  // Enable CORS — in production, configure this with a whitelist of origins
+  app.use(cors());
 
   // Parse JSON bodies
   app.use(express.json());

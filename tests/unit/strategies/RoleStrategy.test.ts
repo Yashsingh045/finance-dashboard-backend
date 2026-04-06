@@ -4,7 +4,6 @@ import { ViewerStrategy } from '../../../src/strategies/ViewerStrategy';
 import { AnalystStrategy } from '../../../src/strategies/AnalystStrategy';
 import { AdminStrategy } from '../../../src/strategies/AdminStrategy';
 
-// tests/unit/strategies/RoleStrategyFactory.test.ts
 describe('RoleStrategyFactory', () => {
   it('returns ViewerStrategy for VIEWER role', () => {
     const strategy = RoleStrategyFactory.getStrategy(UserRole.VIEWER);

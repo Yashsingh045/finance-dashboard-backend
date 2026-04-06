@@ -2,7 +2,6 @@ import { Request, Response, NextFunction } from 'express';
 import { UserService } from '../services/UserService';
 import { BaseController } from './BaseController';
 
-// src/controllers/UserController.ts
 export class UserController extends BaseController {
   constructor(private readonly userService: UserService) {
     super();

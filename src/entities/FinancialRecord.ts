@@ -2,7 +2,6 @@ import { Decimal } from '@prisma/client/runtime/library';
 import { BaseEntity } from './BaseEntity';
 import { Category, RecordType } from './enums';
 
-// src/entities/FinancialRecord.ts
 // Domain entity for financial records. Uses Prisma's Decimal type so arithmetic
 // is never done with JS floats (avoids IEEE-754 rounding errors on currency).
 export class FinancialRecord extends BaseEntity {

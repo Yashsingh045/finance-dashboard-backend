@@ -1,6 +1,5 @@
 import winston from 'winston';
 
-// src/utils/logger.ts
 // Winston logger: JSON format in production, colorised + readable in development.
 // All services receive it via constructor injection — never global import in business logic.
 const { combine, timestamp, printf, colorize, json } = winston.format;

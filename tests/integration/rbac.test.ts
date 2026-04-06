@@ -7,7 +7,6 @@ import {
   randomEmail,
 } from '../helpers/fixtures';
 
-// tests/integration/rbac.test.ts
 // Tests the Role-Based Access Control matrix across all role/route combinations.
 describe('RBAC Access Control', () => {
   let adminToken: string;
